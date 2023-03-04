@@ -1,0 +1,29 @@
+{
+  "name": "human-resources-management-cypress",
+  "version": "1.0.0",
+  "description": "The Orange HRM human resources management system will be automated with Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-cypress",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/criszayala/OrangeHRM-Cypress.git"
+  },
+  "keywords": [
+    "e2e",
+    "automation",
+    "framework",
+    "cypress"
+  ],
+  "author": "Cristian Ayala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/criszayala/OrangeHRM-Cypress/issues"
+  },
+  "homepage": "https://github.com/criszayala/OrangeHRM-Cypress#readme",
+  "devDependencies": {
+    "cypress": "^12.7.0"
+  }
+}
