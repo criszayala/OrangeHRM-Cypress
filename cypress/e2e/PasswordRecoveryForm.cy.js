@@ -36,4 +36,21 @@ describe('Password Recovery Form', () => {
       cy.get('.resetBox').should('not.be.visible')
       cy.get('.message.success').contains('Reset Password link sent successfully')
     })
+      // Test case to check if an error message is displayed when trying to reset password without entering a username
+  it('should display an error message when Reset Password is clicked without entering a username', () => {
+    cy.get('.loginForm a').contains('Forgot your password?').click()
+    cy.get('#btnSearchValues').click()
+    cy.get('#securityAuthentication_userName').parent().find('.validation-error').should('have.text', 'Required')
+  })
+
+  // Test case to check if success message and description is displayed after valid username is entered and Reset Password is clicked
+  it('should show success message and description after valid username is entered and Reset Password is clicked', () => {
+    cy.get('.loginForm a').contains('Forgot your password?').click()
+    cy.get('#securityAuthentication_userName').type('admin')
+    cy.get('#btnSearchValues').click()
+    cy.get('.resetBox').should('not.be.visible')
+    cy.get('.message.success').contains('Reset Password link sent successfully')
+    cy.get('.message.success p').contains('A reset password link has been sent to you via email.\nYou can follow that link and select a new password.')
+    cy.get('.message.success p').contains('If the email does not arrive, please contact your OrangeHRM Administrator.')
+  })
   })
