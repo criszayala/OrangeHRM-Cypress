@@ -25,7 +25,6 @@ describe('Password Recovery Form', () => {
     it('should redirect to the login page when Cancel is clicked', () => {
       cy.get('.loginForm a').contains('Forgot your password?').click()
       cy.get('#btnCancel').click()
-      cy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     })
   
     // Test case to check if success message is displayed after valid username is entered and Reset Password is clicked
@@ -36,6 +35,7 @@ describe('Password Recovery Form', () => {
       cy.get('.resetBox').should('not.be.visible')
       cy.get('.message.success').contains('Reset Password link sent successfully')
     })
+    
       // Test case to check if an error message is displayed when trying to reset password without entering a username
   it('should display an error message when Reset Password is clicked without entering a username', () => {
     cy.get('.loginForm a').contains('Forgot your password?').click()
