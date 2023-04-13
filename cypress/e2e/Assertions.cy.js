@@ -18,5 +18,8 @@ describe("Assertions test", ()=>{
             cy.title().should('include','Orange')
             .and('eq', "OrangeHRM")
             .and('contain',"HRM")
+
+            /*Se valida que el logotipo se encuentra visible en el formulario de login */
+            cy.get('.orangehrm-login-branding > img').should('be,visible')
         })
 })
