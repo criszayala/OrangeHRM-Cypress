@@ -14,5 +14,9 @@ describe("Assertions test", ()=>{
             /*2 - Validamos que la url del login sea la correcta*/
             cy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
+            /*3 - Validamos que el título del sitio sea correcto usando palabras claves como include, eq y contain*/
+            cy.title().should('include','Orange')
+            .and('eq', "OrangeHRM")
+            .and('contain',"HRM")
         })
 })
