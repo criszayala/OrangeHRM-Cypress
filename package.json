@@ -25,5 +25,8 @@
   "homepage": "https://github.com/criszayala/OrangeHRM-Cypress#readme",
   "devDependencies": {
     "cypress": "^12.7.0"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
