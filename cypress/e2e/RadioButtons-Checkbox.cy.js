@@ -26,11 +26,27 @@ describe("Check UI Elements", ()=>{
         //1. Se valida que el Checkbox esté visible
         cy.get("input#monday").should('be.visible')
 
-        //2. Se valida que seleccionamos una opción del checkbox (Monday)
+        //2. Se valida que seleccionamos una opción del checkbox (Monday) y se valida la selección
         cy.get("input#monday").check().should('be.checked')
         
-        //3. Se valida que deseleccionamos opción del checkbox (Monday)
+        //3. Se valida que deseleccionamos opción del checkbox (Monday) y se valida la deselección
         cy.get("input#monday").uncheck().should('not.be.checked')
+    })
+
+    it("Test 3 - Selecting multiple options checkbox",()=>{
+
+        //Ingresamos al sitio de prueba
+        cy.visit("https://itera-qa.azurewebsites.net/home/automation")
+
+        //1. Se seleccionan todas las casillas del checkout y se verifican que estén seleccionadas
+        cy.get("input.form-check-input[type='checkbox']").check().should('be.checked')
+
+        //2. Se desmarcan todas las casillas del checkout y se verifican que todas estén desmarcadas
+        cy.get("input.form-check-input[type='checkbox']").uncheck().should('not.be.checked')
+
+        //3. Se marcan la primer y última casilla del checkbox y verificamos estas selecciones (assertions)
+        cy.get("input.form-check-input[type='checkbox']").first().check().should('be.checked')
+        cy.get("input.form-check-input[type='checkbox']").last().check().should('be.checked')
     })
 
 })
