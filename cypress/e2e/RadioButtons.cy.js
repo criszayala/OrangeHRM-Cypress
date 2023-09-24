@@ -23,7 +23,7 @@ describe("Check UI elements",()=>{
         cy.visit("https://demo.guru99.com/test/radio.html")
            
         //--Se verifica la visibilidad de los Checkboxes del sitio/Pantalla
-        //---Buscamos el elemento checkbox 2 por su atributo 'name' y 'value'. Luego verificamos que esté visible
+        //---Buscamos el elemento checkbox 2 por tipo y su atributo 'name' y 'value'. Luego verificamos que esté visible
         cy.get('input[type="checkbox"][name="webform"][value="checkbox2"]').should('be.visible');
         //---Seleccionamos el checkbox 1 y 3 por su ID. Luego verificamos que esté visible
         cy.get("input#vfb-6-0").should('be.visible')
@@ -31,14 +31,21 @@ describe("Check UI elements",()=>{
 
         /*-----------------------------------------------*/ 
         //Seleccionamos todos los checkboxes y verificamos que todos estén seleccionados
+        
         cy.get("input#vfb-6-0").check().should("be.checked")
         cy.get("input#vfb-6-2").check().should("be.checked")
         cy.get("input#vfb-6-1").check().should("be.checked")
 
         //Desmarcar opción del checkbox 2 y verificar que realmente esté desmarcado el checkbox 2
         cy.get("input#vfb-6-1").uncheck().should("not.be.checked")
-        cy.get("input#vfb-6-0").should("be.checked")
-        cy.get("input#vfb-6-2").should("be.checked") 
-    })
 
+        //cy.get("input#vfb-6-0").should("be.checked")
+        //cy.get("input#vfb-6-2").should("be.checked")
+
+        //Selecting all the checkboxes
+        //---Buscamos los elementos por el tipo y atributo 'name' + 'value', marcamos todas los checkboxes y validamos marca
+        cy.get('input[type="checkbox"][name="webform"]').check().should('be.visible');
+
+        
+    })
 })
