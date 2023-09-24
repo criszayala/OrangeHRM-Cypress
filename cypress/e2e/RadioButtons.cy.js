@@ -34,6 +34,11 @@ describe("Check UI elements",()=>{
         cy.get("input#vfb-6-0").check().should("be.checked")
         cy.get("input#vfb-6-2").check().should("be.checked")
         cy.get("input#vfb-6-1").check().should("be.checked")
+
+        //Desmarcar opción del checkbox 2 y verificar que realmente esté desmarcado el checkbox 2
+        cy.get("input#vfb-6-1").uncheck().should("not.be.checked")
+        cy.get("input#vfb-6-0").should("be.checked")
+        cy.get("input#vfb-6-2").should("be.checked") 
     })
 
 })
