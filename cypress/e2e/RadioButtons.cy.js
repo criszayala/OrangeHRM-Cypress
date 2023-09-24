@@ -46,6 +46,10 @@ describe("Check UI elements",()=>{
         //---Buscamos los elementos por el tipo y atributo 'name' + 'value', marcamos todas los checkboxes y validamos marca
         cy.get('input[type="checkbox"][name="webform"]').check().should('be.visible');
 
+        //Uncheck all checkboxes
+        //---Buscamos los elementos por el tipo y atributo 'name' + 'value', marcamos todas los checkboxes y validamos marca
+        cy.get('input[type="checkbox"][name="webform"]').uncheck().should('be.visible');
+
         
     })
 })
