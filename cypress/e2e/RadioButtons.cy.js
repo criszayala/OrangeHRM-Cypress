@@ -21,9 +21,9 @@ describe("Check UI elements",()=>{
 
     it("TC 2 - Checking Checkboxes",()=>{
         cy.visit("https://demo.guru99.com/test/radio.html")
-            
-        //Se verifica la visibilidad de los Checkboxes del sitio/Pantalla utilizando 
-        //---Seleccionamos el checkbox  2 por su atributo 'name' y 'value'. Luego verificamos que esté visible
+           
+        //--Se verifica la visibilidad de los Checkboxes del sitio/Pantalla
+        //---Buscamos el elemento checkbox 2 por su atributo 'name' y 'value'. Luego verificamos que esté visible
         cy.get('input[type="checkbox"][name="webform"][value="checkbox2"]').should('be.visible');
         //---Seleccionamos el checkbox 1 y 3 por su ID. Luego verificamos que esté visible
         cy.get("input#vfb-6-0").should('be.visible')
