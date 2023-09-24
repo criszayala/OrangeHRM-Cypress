@@ -1,6 +1,6 @@
 describe("Check UI elements",()=>{
 
-    it("Checking Radio Buttons",()=>{
+    /*it("TC 1 - Checking Radio Buttons",()=>{
         cy.visit("https://demo.guru99.com/test/radio.html")
             
         //búsqueda de un elemento por ID + condición (función que comprueba elemento esté visible en la página)
@@ -17,7 +17,23 @@ describe("Check UI elements",()=>{
         cy.get("input#vfb-7-3").check().should('be.checked') //marcamos radio button y verificamos la selección
         cy.get("input#vfb-7-1").should('not.be.checked')  //Se verifica que NO esté seleccionado el radio button 1
         cy.get("input#vfb-7-2").should('not.be.checked') //Se verifica que NO esté seleccionado el radio button 2
-   
-   
+    })*/
+
+    it("TC 2 - Checking Checkboxes",()=>{
+        cy.visit("https://demo.guru99.com/test/radio.html")
+            
+        //Se verifica la visibilidad de los Checkboxes del sitio/Pantalla utilizando 
+        //---Seleccionamos el checkbox  2 por su atributo 'name' y 'value'. Luego verificamos que esté visible
+        cy.get('input[type="checkbox"][name="webform"][value="checkbox2"]').should('be.visible');
+        //---Seleccionamos el checkbox 1 y 3 por su ID. Luego verificamos que esté visible
+        cy.get("input#vfb-6-0").should('be.visible')
+        cy.get("input#vfb-6-2").should('be.visible')
+
+        /*-----------------------------------------------*/ 
+        //Seleccionamos todos los checkboxes y verificamos que todos estén seleccionados
+        cy.get("input#vfb-6-0").check().should("be.checked")
+        cy.get("input#vfb-6-2").check().should("be.checked")
+        cy.get("input#vfb-6-1").check().should("be.checked")
     })
+
 })
