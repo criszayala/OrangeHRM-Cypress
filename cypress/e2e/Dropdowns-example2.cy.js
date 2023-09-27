@@ -2,9 +2,14 @@ describe('handle dropdowns',()=>{
 
     it('dropdown without select', ()=>{
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-        cy.get('#txtUsername').type('Admin')
-        cy.get('#txtPassword').type('admin123')
-        cy.get('#btnLogin').click()
+
+        cy.get('input[name="username"]')
+            .type('Admin');
+        cy.get('input[name="password"][type="password"]')
+            .type('admin123');
+        // Locate and click the "Login" button by its class
+        cy.get('button.orangehrm-login-button')
+        .click();
 
         // Use cy.get() with a CSS selector
         cy.get('span.oxd-text.oxd-text--span.oxd-main-menu-item--name')
