@@ -53,6 +53,5 @@ describe("Check UI elements",()=>{
         //Select first and last checkbox y verificamos que las opciones estén seleccionadas
         cy.get('input[type="checkbox"][name="webform"]').first().check().should('be.checked');
         cy.get('input[type="checkbox"][name="webform"]').last().check().should('be.checked');
-
     })
 })
