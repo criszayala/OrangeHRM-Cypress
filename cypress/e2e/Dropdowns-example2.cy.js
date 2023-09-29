@@ -16,10 +16,14 @@ describe('handle dropdowns',()=>{
         .contains('My Info')
         .click();
         
-
-        cy.get('oxd-select-text.oxd-select-text--active')
+        // Locate and click the dropdown to open it
+        cy.get('div.oxd-select-text')
         .click();
-        
+
+        // Locate and click the specific option (e.g., "American")
+        cy.get('div.oxd-select-text-input')
+        .contains('American')
+        .click({ multiple: true });
         
         /* Select the dropdown by its class name
         cy.get('.information.closable').click();
